@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementById('btn');
+            var oTxt = document.getElementById('txt');
+            var oUl = document.getElementById('ul1');
+            oBtn.onclick = function () {
+                var str = oTxt.value;
+
+                var oLi = document.createElement('li');
+                oLi.innerHTML = str + '<a href="javascript:;">删除</a>';
+               // oUl.insertBefore(oLi,oUl.children[0]);
+                if(oUl.children[0]){
+                    oUl.insertBefore(oLi,oUl.children[0]);
+                }else{
+                    oUl.appendChild(oLi);
+                }
+                oTxt.value = '';//为什么str = ''就不可以呢？
+
+                var oA = oLi.getElementsByTagName('a')[0];
+                oA.onclick = function () {
+                    oUl.removeChild(oLi);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="txt">
+<input type="button" id="btn" value="发表">
+<ol id="ul1">
+
+</ol>
+</body>
+</html>

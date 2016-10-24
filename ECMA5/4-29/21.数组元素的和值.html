@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var data = [1,2,3,4,5];
+        var sum = 0;
+        data.forEach(function (value) {
+            sum += value;
+        })
+        console.log(sum);
+
+        data.forEach(function (v,i,a) {
+            a[i] = v + 1;
+        })
+        console.log(data);
+
+        var a = [1,2,3,4];
+        var b = a.map(function (x) {
+            return x*x;
+        })
+        console.log(b);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

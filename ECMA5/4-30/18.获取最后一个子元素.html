@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{margin: 10px; height: 30px; background: #ccc;}
+    </style>
+    <script>
+        window.onload = function () {
+            var oUl = document.getElementById('ul1');
+            var oLi = oUl.lastElementChild || oUl.lastChild;
+
+            oLi.style.background = 'red';
+        }
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li>44444</li>
+    <li>222222222222</li>
+    <li>33333333</li>
+    <li>111111</li>
+</ul>
+</body>
+</html>

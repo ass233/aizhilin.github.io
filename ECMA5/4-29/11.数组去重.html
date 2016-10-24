@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function b(arr,n) {
+            for(var i = 0;i<arr.length;i++){
+                if(arr[i] == n){return true}
+            }
+            return false;
+        }
+        var arr1 = [1,1,1,2,3,4,4,3,3,5,6,7,8,9,0];
+        var a = [];
+        for(var i = 0;i<arr1.length;i++){
+            if(!b(a,arr1[i])){
+                a.push(arr1[i]);
+            }
+        }
+        alert(a);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

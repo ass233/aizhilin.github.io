@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取时间</title>
+</head>
+<body>
+<script>
+    var nowTime = new Date();
+    console.log(nowTime);
+  /*  console.dir(nowTime);*/
+    var year = nowTime.getFullYear();//获取四位数的年
+    console.log(year);
+    var month = nowTime.getMonth()+1;//获取从0到11的月份表示1-12的月份需要后面加1
+    console.log(month);
+    var week = nowTime.getDay();//表示从0到6星期7天
+    console.log(week);
+    var dates = nowTime.getDate();
+    console.log(dates);
+    var hours = nowTime.getHours();
+    console.log(hours);
+    var minutes = nowTime.getMinutes();
+    console.log(minutes);
+    var seconds = nowTime.getSeconds();
+    console.log(seconds)
+    var mSecondes = nowTime.getMilliseconds();
+    console.log(mSecondes);
+
+    function addZero(n) {
+        n<10?n="0"+n:null;
+        return n;
+    }
+    var weekAry = ["日","一","二","三","四","五","六"];
+    var strDate = year + "年" +addZero(month)+"月"+
+</script>
+</body>
+</html>

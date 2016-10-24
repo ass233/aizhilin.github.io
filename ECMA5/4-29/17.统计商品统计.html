@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>统计商品数量</title>
+    <style>
+        body {text-align:center;}
+    </style>
+    <script>
+        window.onload = function () {
+            var oTxt1 = document.getElementById('txt1');
+            var oTxt2 = document.getElementById('txt2');
+            var oBtn = document.getElementById('btn1');
+
+            oBtn.onclick = function () {
+                var str = oTxt1.value;
+                var json = {};
+
+                var arr1 = str.split(',');
+
+                for(var i = 0;i<arr1.length;i++){
+                        var sName = arr1[i].split('-')[0];
+                        if(json[sName]){
+                            json[sName]++;
+                        }else{
+                            json[sName] = 1;
+                        }
+                    console.log(sName);
+
+                }
+
+
+                var arr2 = [];
+                for(var name in json){
+                    var str1 = name+'('+json[name]+')';
+                    arr2.push(str1);
+
+                }
+                oTxt2.value = arr2.join('\n');
+            }
+        }
+    </script>
+</head>
+<body>
+输入原始文本(空格隔开)：<br>
+<textarea style="width:300px; height:200px;" id="txt1">冰红茶-3元,冰绿茶-2.5元,橙汁-1.5元,葡萄汁-5毛,柠檬汁-1.5元,芒果汁-30毛,柠檬汁-1.5元,柠檬汁-1.5元,柠檬汁-1.5元,柠檬汁-1.5元</textarea><br>
+<br>
+<input type="button" value="变" id="btn1" /><br>
+<br>
+这里输出结果：<br>
+<textarea style="width:300px; height:200px;" id="txt2"></textarea>
+</body>
+</html>

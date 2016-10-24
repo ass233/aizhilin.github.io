@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //引用数据类型:Object:对象  数组  正则  时间   function
+    //对象：ECMAScript：定义了对象是由多组（属性名：属性值）组成，叫做键值对;属性名不同，否则后面的覆盖前面的
+   // var person = {sex:"女",height:166,1:2}
+    //增加和删除对象：删除分为真删除和假删除
+   // delete person.height;
+   // console.log(person.height);//undefined  假删除是清除属性值
+   // person.sex = null;
+    //console.log(person.sex);//null 真删除是删除属性
+
+    //var obj = {name:"三毛",sex:"女",class:2,1:12};//获取对象的属性名的属性值的时候可以用对象名，对象名.属性名，但是这个属性名不可以是数字
+    //对象名["属性名"]
+    //console.log(obj.name);
+    //console.log(obj.1);错误应该成一下方法
+    //console.log(obj[1]);
+
+    var a = 1;b = "2";
+    var obj = {
+        a:"b",
+        b:1,
+        1:"a",
+        3:"ab"
+    }
+    console.log(obj[b]);//undefined
+    console.log(obj.a+a);//b1
+    console.log(obj[a]+a);//a1
+    console.log(obj["a"]+a);//b1
+    console.log(obj[a+b]);//undefined
+
+    var j = {a:"a",b:"b"};
+    j.a = "b";//j = {a:"b",b:"b"}
+    j.c = "c";//j = {a:"b",b:"b",c:"c"}
+    console.log(j);
+
+</script>
+</body>
+</html>

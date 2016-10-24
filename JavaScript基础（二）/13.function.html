@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function</title>
+</head>
+<body>
+<script>
+/*    function sum() {
+        var a = 1+2;
+        console.log(a);
+    }*/
+/*    function sum() {
+        var a = 1+2;
+        return a;
+    }
+    var num = sum();
+    console.log(num);*/
+
+    //参数
+    function fn(a,b) {
+        return a+b;
+    }
+
+    console.log(fn(1,2));
+
+
+    function fn() {
+        var y = 0;
+        for(var i = 0;i<arguments.length;i++){
+            y+=arguments[i];
+        }
+        return y;
+    }
+    console.log(fn(1,2,3,4,5));
+
+    
+    //匿名函数
+    //1、给事件绑定一个方法
+    oDiv.onclick = function () {
+        
+    }
+
+
+</script>
+</body>
+</html>

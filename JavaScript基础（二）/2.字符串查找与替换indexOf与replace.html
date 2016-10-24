@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<script>
+    var s = "<div class='class1'>111111</div>";
+    console.log(s.length);
+    console.log(s[6]);
+
+    var a = s.split("");//把字符串拆分成数组
+    var b = s.split("=");
+    console.log(a);
+    console.log(b);
+    //replace
+    var s1 = s.replace("class1","dream1");
+    var s2 = s.replace("div","span");//每次只能替换一个替换后生成：<span class='class1'></div>
+    var s3 = s.replace("div","span").replace("div","span");
+    console.log(s1);
+    console.log(s2);
+    console.log(s3);
+    document.body.innerHTML = s3;
+    var index = s.indexOf("c");//字符在字符串中首次出现的位置
+    var index1 = s.indexOf("f");
+    console.log(index);
+    console.log(index1);//如果字符串中没有查找的字符就返回-1；
+</script>
+</body>
+</html>

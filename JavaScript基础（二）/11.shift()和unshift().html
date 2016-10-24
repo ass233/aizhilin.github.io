@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shift和unshift()</title>
+</head>
+<body>
+<script>
+    var arr = [1,2,3,4,5,6,7,8];
+    //var b = arr.shift(6);//删除数组第一项
+    //console.log(arr);
+  //  var c = arr.unshift(7,8);//向数组开始的位置增加新内容
+  //  console.log(arr,c);
+
+    //slice(n,m)从索引n开始到索引m-1,原数组不变，返回值是找出的内容组成的新数组
+    //splice
+    var a = arr.slice(3,6);
+  //  console.log(a);
+    //var a = arr.splice(5,3);//splice(n,m);n<m从索引n开始往后查找m个元素,如果位数不够或者是一个参数就往后查找所有;
+    console.log(a);
+</script>
+</body>
+</html>

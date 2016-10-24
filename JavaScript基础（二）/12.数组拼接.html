@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>concat、join、eval</title>
+</head>
+<body>
+<script>
+    var arr = [1,2,3,4,5];
+    var arr2 = [6,7];
+    var arr5 = [8,9];
+    var arr3 = arr.concat(arr2,arr5);
+   // var arr4 = arr3.concat(8,9,10);
+    console.log(arr3);
+    var str = arr3.toString();
+    console.log(str);
+    var str2 = arr3.join(",");
+    console.log(str2);
+    var str3 = arr.join("+");
+    console.log(str3);
+    var num = eval(str3);
+    console.log(num);
+</script>
+</body>
+</html>

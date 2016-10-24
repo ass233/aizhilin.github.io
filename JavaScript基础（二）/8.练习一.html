@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var nowTime = new Date();
+    var targetTime = new Date("2016/11/11 11:11:11");
+    console.log(targetTime);
+    var diffTime = targetTime - nowTime;
+    console.log(diffTime);//毫秒数
+    var months = Math.floor(diffTime/(1000*60*60*24*30));
+    var dates = Math.floor(diffTime%(1000*60*60*24*30)/(1000*60*60*24));
+    var hours = Math.floor(diffTime%(1000*60*60*24*30)/(1000*60*60*24)/(1000*60*60));
+    var minues = Math.floor(diffTime%(1000*60*60*24*30)/(1000*60*60*24)/(1000*60*60)/(1000*60));
+    var secondes = Math.floor(diffTime%(1000*60*60*24*30)/(1000*60*60*24)/(1000*60*60)/1000);
+    var s = months+"月"+dates+"天"+hours+"小时"+minues+"分钟"+secondes+"秒";
+    console.log(s);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pop</title>
+</head>
+<body>
+<script>
+    var arr = [1,2,4,5];
+    //console.dir(ary);
+    //push(n)给原数组末尾增加新内容
+    //注意返回值 原数组是否改变 参数
+    arr.push(12,12,12,12);//可以设置多个参数
+    var a = arr;
+    // a = ary;
+    //console.log(arr);
+    //2、删除数组最后一项
+   /* var b = a.pop(12);
+    console.log(a,b)*/
+   //a.length-=1;
+    delete a[a.length-1];
+    console.log(a)
+
+</script>
+</body>
+</html>

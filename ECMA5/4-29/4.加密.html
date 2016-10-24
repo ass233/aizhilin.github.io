@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加密</title>
+    <style>
+        textarea{width: 200px;height: 150px;}
+    </style>
+    <script>
+        window.onload = function () {
+            var oT1 = document.getElementById('t1');
+            var oT2 = document.getElementById('t2');
+            var oBtn = document.getElementById('btn');
+            var str2 = '';
+
+            oBtn.onclick = function () {
+                var str = oT1.value;
+
+                for(var i = 0;i<str.length;i++){
+                    var n = str.charCodeAt(i) + 50;
+                    str2 += String.fromCharCode(n);
+                }
+                oT2.value = str2;
+            }
+        }
+    </script>
+</head>
+<body>
+<textarea id="t1">我喜欢你</textarea><br>
+<input type="button" value="加密" id="btn"><br>
+<textarea id="t2"></textarea><br>
+
+</body>
+</html>
