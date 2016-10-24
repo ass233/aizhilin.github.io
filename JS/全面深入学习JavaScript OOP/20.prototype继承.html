@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function class1() {
+            this.p1 = "p1";
+            this.method1 = function () {
+                alert("method1");
+            }
+        }
+
+        function class2() {
+
+        }
+
+        class2.prototype = class1.prototype;
+        class2.prototype.p2 = "p2";
+        class2.prototype.method2 = function () {
+            alert("method2");
+        }
+
+        var cls1 = new class1();
+        alert(cls1.p1);
+        cls1.method1();
+
+
+        var cls2 = new class2();
+        alert(cls2.p1);//继承不过来
+        alert(cls2.p2);
+        cls2.method1();//继承不过来
+        cls2.method2();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

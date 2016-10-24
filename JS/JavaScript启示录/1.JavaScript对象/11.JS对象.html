@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原始值(String、Number、Boolean)在被用作对象时就像对象</title>
+    <script>
+        var myNull = null;
+        var myUndefined = undefined;
+        var primitiveString1 = "foo";
+        var primitiveString2 = String('foo');
+        var primitiveNumber1 = 10;
+        var primitiveNumber2 = Number('10');
+        var primitiveBoolean1 = true;
+        var primitiveBoolean2 = Boolean('true');
+
+        console.log(primitiveString1.toString(),primitiveString2.toString());
+        console.log(primitiveNumber1.toString(),primitiveNumber2.toString());
+        console.log(primitiveBoolean1.toString(),primitiveBoolean2.toString());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

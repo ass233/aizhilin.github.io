@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14.复杂对象比较采用引用比较</title>
+    <script>
+        /*
+        * 复杂对象只有在引用相同的时候才相等
+        * */
+        var objectFoo = {same : 'same'};
+        var objectBar = {same : 'same'};
+        console.log(objectBar === objectFoo);//JS不关注类型是否相同
+
+        //复杂对象如何才相等
+        var objectA = {foo : 'bar'};
+        var objectB = objectA;
+        console.log(objectA === objectB); //true  因为的是同一个对象
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

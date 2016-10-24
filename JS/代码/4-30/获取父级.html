@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取父级</title>
+    <style>
+        div{ width: 200px;height: 200px;border: 1px solid red;margin: 50px auto;}
+    </style>
+</head>
+<body>
+<div>
+    <input type="button" value="aaaa" id="btn">
+</div>
+<script>
+    var oBtn = document.getElementById('btn');
+    oBtn.onclick = function () {
+        var oDiv = oBtn.parentNode;
+        oDiv.style.background = '#ccc';
+    }
+</script>
+</body>
+</html>

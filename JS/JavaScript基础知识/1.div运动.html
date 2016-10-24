@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{ width:100px; height:100px;background: #cccccc;position:absolute; margin-top: 50px }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementById('btn');
+            var oDiv = document.getElementById('box');
+            oBtn.onclick = function () {
+                var count = 0;
+                setInterval(function () {
+                    count += 10;
+                    oDiv.style.left = count + 'px';
+                },16);
+
+            }
+        };
+    </script>
+</head>
+<body>
+<button id="btn">开始</button>
+<div id="box"></div>
+</body>
+</html>

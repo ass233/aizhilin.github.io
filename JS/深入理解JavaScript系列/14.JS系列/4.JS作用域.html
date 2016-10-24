@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var x = 10;
+        function foo() {
+            alert(x);
+        }
+        (function () {
+            var x = 20;
+            foo();
+        })();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型对象和原型链的继承</title>
+    <script>
+        function A(mark) {
+            this.mark = mark;
+        }
+        A.prototype.getMark = function () {
+            return this.mark;
+        }
+
+        function B(mark) {
+            this.mark = mark;
+        }
+
+        B.prototype = new A('A');
+        var b = new B('B');
+        console.log(b.mark);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

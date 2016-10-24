@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>移动端基础事件</title>
+    <meta name="viewport" content="width=device-width",user-scalable="no">
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var box = document.querySelector('.box');
+            //box.style.background = "blue";
+            /*
+            * touchstart手指触摸==mousedown
+            * touchend手指抬起 == mouseup
+            * touchmove == mousemove*/
+            box.ontouchstart = function () {
+                //this.style.background = "blue";
+                console.log(1);
+            };
+            box.ontouchend = function () {
+                //box.style.background = "red";
+                console.log(2);
+            };
+            box.ontouchmove = function () {
+                console.log(3);
+            }
+        };
+    </script>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

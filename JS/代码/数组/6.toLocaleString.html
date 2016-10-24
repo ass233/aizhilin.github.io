@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>toLocaleString</title>
+    <script>
+        var person1 = {
+            toLocaleString:function () {
+                return "Nikolaos";
+            },
+            toString : function () {
+                return "Nikolaos";
+            },
+        };
+
+        var person2 = {
+            toLocaleString:function () {
+                return "Grigorios";
+            },
+            toString:function () {
+                return "Greg";
+            }
+        };
+
+        var people = [person1,person2];
+        alert(people);
+        var arr = new Array(3)
+        arr[0] = "George"
+        arr[1] = "John"
+        arr[2] = "Thomas"
+
+        document.write(arr.join())
+    </script>
+</head>
+<body>
+
+</body>
+</html>

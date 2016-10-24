@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型和继承</title>
+    <script type="text/javascript">
+       /* function F() {
+
+        }
+        alert(F.prototype instanceof Object);*/
+
+       function A(x) {
+           this.x = x;
+       }
+       var obj = new A(1);
+     /*   alert(obj.constructor === A);
+        alert(A.prototype.constructor === A);
+        alert(obj.constructor === A.prototype.constructor);
+        alert(obj.constructor.prototype === A.prototype);*/
+     var obj = new Object();
+       // console.log(obj.__proto__);
+        var num = 0;
+        for (var o in A.prototype){
+            alert(o);
+            num ++;
+        }
+        //alert("member:" + num);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

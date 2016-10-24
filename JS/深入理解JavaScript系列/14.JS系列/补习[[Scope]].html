@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>补习[[Scope]]</title>
+    <script>
+       /* var a = 1;
+        if(true){
+            var b = 1
+        }
+        console.log(b);//1 a和b 在一个Scope内*/
+
+       /*
+       预编译：js的代码在首次被加载完成后进行编译时，会将所有的function和var提前进行声明，但是并不会对其
+       进行赋值，赋值则都是在该代码块进行执行时才会对其进行赋值，那么第一个log则是在预编译为b进行了声明后，
+       这时b是没有时行赋值的，所以会log出undefined；
+       var a = 1;
+       var b = 2;
+        function doit(){
+            console.log(b); //undefined
+            var b = 3;
+            console.log(b); //3
+        }
+        doit();
+        console.log(b); //2*/
+
+/*        不同Scope进行操作
+        var a = 1;
+        var b = 2;
+        function doit() {
+            var b = 3;
+            console.log(a);
+        }
+        doit();*/
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

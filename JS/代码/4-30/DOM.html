@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{ height: 30px;margin: 10px;background: #cccccc;}
+    </style>
+    <script>
+        window.onload = function () {
+            var oUl = document.getElementById('ul1');
+            var aLi = oUl.children;
+            alert(aLi.length);
+        }
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li>
+        <ul>
+            <li>aaaaa</li>
+        </ul>
+    </li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

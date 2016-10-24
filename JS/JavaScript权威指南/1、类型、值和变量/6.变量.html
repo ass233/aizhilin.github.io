@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量</title>
+    <script>
+/*        var scope = "global";
+        function checkscope() {
+            var scope = "local";
+            return scope;
+        }
+
+        alert(checkscope());*/
+
+        scope = "global";
+        function checkscope2() {
+            scope = "local";
+            myscope = "local";
+            return [scope,myscope];
+        }
+        checkscope2();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

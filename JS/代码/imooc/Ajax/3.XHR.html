@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XHR</title>
+    <script>
+  /*      var request;
+        if(window.XMLHttpRequest){
+            request = new XMLHttpRequest();
+        }else{
+            request = new ActiveXObject("Microsoft.XMLHTTP");
+        }*/
+       // open(method,url,async)
+      //  send(string)
+        /*get
+        request.open("GET","get.php",true);
+        request.send();*/
+
+        /*post
+        request.open("POST","post.php",true);
+        request.send();*/
+
+
+        request.open("POST","create.php",true);
+        request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        request.send("name=王二狗&sex=男");
+
+
+
+        var request = new XMLHttpRequest();
+        request.open("GET","get.php",true);
+        request.send();
+        request.onreadystatechange=function () {
+            if(request.readyState === 4 && request.status ===200){
+                request.responseText
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

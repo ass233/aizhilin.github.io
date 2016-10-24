@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>如何存储和复制复杂值</title>
+    <script>
+        var myObject = {};
+        var copyOfMyobject = myObject; //没有复制值而是复制了引用
+        myObject.foo = 'bar'; //操作myObject中的值
+        console.log(myObject.copyOfMyObject);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>立即调用函数表达式</title>
+    <script>
+        function makeCounter() {
+            var i = 0;
+            return function () {
+                console.log(++i);
+            };
+        }
+
+        var counter = makeCounter();
+        counter();
+        counter();
+
+        var counter2 = makeCounter();
+        counter2();
+        counter2();
+        alert(i);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>局部作用域嵌套</title>
+    <script>
+        var scope = "global scope";
+        function checkscope() {
+            var scope = "local scope";
+            function nested() {
+                var scope = "nested scope";
+                return scope;
+            }
+            return nested();
+        }
+        checkscope();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

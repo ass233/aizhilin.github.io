@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态属性支持易变对象</title>
+    <script>
+        //复杂对象是由动态属性构成的。这使得用户自定义对象和大多数原生对象可以产生突变。
+        String.augmentedProperties = [];
+        if(!String.prototype.trimIT()){
+            String.prototype.trimIT = function () {
+                return this.replace(正则);
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

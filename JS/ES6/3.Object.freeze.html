@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>freeze冻结对象</title>
+    <script>
+     /*   const foo = Object.freeze({});
+
+        foo.prop = 123;
+        console.log(foo);*/
+     var constantize = (obj) => {
+         Object.freeze(obj);
+         Object.keys(obj).forEach( (key, value) => {
+             if ( typeof obj[key] === 'object' ) {
+             constantize( obj[key] );
+         }
+     });
+     };
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>理解对象</title>
+    <script>
+        var person = new Object();
+        person.name = "ass";
+        person.age = 29;
+        person.job = "web";
+        person.sayName = function () {
+            alert(this.name);
+        }
+
+        /*************************************************/
+        var person = {
+            name : "ass",
+            age : 29,
+            job : "web",
+            sayName : function () {
+            alert(this.name);
+        }
+        }
+        /*
+        * 要修改属性默认的特性，必须使用Object.defineProperty();这个方法接受三个参数：属性所在的对象、属性的名字、
+        * 一个描述符对象。其中描述符对象的属性必须是configurable、enumerable、writable和value
+        * */
+
+        var person = {};
+        Object.defineProperty(person , "name",{
+            writable:false,
+            value:"ass"
+        });
+        alert(person.name);
+        person.name = "Greg";
+        alert(person.name);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结合作用域链看闭包</title>
+    <script>
+        function counter() {
+            var x = 0;
+            return {
+                increase:function increase() {
+                    return ++x;
+                },
+                decrease:function decrease() {
+                    return --x;
+                }
+            };
+        }
+        var ctor = counter();
+        console.log(ctor.increase());
+        console.log(ctor.decrease());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

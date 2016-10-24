@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>大小</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        div{ width: 300px;padding: 10px;border: 1px solid red;height: 210px;background: #ccc;}
+        /*
+            盒子模型——元素实际占据大小
+            盒子模型=width/height + padding + border
+        */
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+    var oDiv = document.getElementById('div1');
+    alert(oDiv.offsetWidth);
+</script>
+</body>
+</html>

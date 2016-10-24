@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>抽象类和虚方法</title>
+    <script type="text/javascript" src="JSframework/FrameWork/Core.js"></script>
+    <script type="text/javascript">
+        function Base() {
+
+        };
+        Base.prototype = {
+            initialize:function () {
+                this.oninit();
+            }
+        };
+
+        function Class01() {
+
+        };
+
+        Class01.prototype = (new Base()).extend({
+            oninit:function () {
+                console.log("init...");
+            }
+        });
+
+        var class01 = new Class01();
+        class01.initialize();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

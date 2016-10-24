@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>_proto_</title>
+    <script>
+        var monkey = {
+            hair : true,
+            feeds: 'bananas',
+            breathes:'air'
+        };
+        function Human(name) {
+            this.name = name;
+        }
+        Human.prototype = monkey;
+       // var mon = new Human('ass');
+      //  console.log(mon.feeds)
+        var george = new Human('George');
+        console.log(monkey.isPrototypeOf(george));
+        console.log(george.feeds);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

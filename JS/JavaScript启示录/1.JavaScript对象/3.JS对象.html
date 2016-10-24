@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>非原生的自定义Person()构造函数</title>
+    <script>
+        //定义Person构造函数，以便稍后创建自定义的Person()对象
+        var Person = function (living,age,gender) {
+            this.living = living;
+            this.age = age;
+            this.gender = gender;
+            this.getGender = function () {
+                return this.gender;
+            }
+        }
+        var cody = new Person(true,33,'male');//实例化Person对象，并将他保存到cody变量
+        console.log(cody);
+        /*笔录
+        * 1.以上是非原生的自定义构造函数可以生成person对象;
+        * 2.以下是原生的构造函数可以生成字符串
+        * */
+        var myString = new String('cody');
+        console.log(myString);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

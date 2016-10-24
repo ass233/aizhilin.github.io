@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var arr = [1,2,3,4,6,12,544,63];
+        var num = 0;
+        function findInArr() {
+            for (var i = 0;i<arr.length;i++){
+                if (arr[i] == num){
+                    return '找到了';
+                }
+            }
+            return '没找到';
+        }
+        alert(findInArr(arr,num));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

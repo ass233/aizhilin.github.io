@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS系列函数</title>
+    <script>
+        /*
+         相当一部分问题出现了，我们为什么需要函数表达式？答案很明显——在表达式中使用它们，”不会污染”变量对象。最简单的例子是将一个函数作为参数传递给其它函数。
+        * */
+  /*      function foo(callback) {
+            callback();
+        }
+        foo(function bar() {
+           alert('foo.bar');
+        });*/
+
+        /*var foo = function () {
+          alert('foo');
+        };
+        foo();*/
+
+        var foo = {};
+        (function initialize() {
+            var x = 10;
+            foo.bar = function () {
+                alert(x);
+            };
+        })();
+        foo.bar();//10
+        alert(x);//未定义
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width",user-scalable="no">
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background: rgba(204,255,0,5);
+            position:absolute;
+            left: 0;
+            top:0;
+        }
+    </style>
+    <script type="text/javascript">
+        document.addEventListener("touchmove",function (e) {
+            e.preventDefault();
+        });
+        window.onload = function () {
+            var div = document.querySelector('#box');
+            /*pc端鼠标事件在移动端也照常使用
+            * 事件点透*/
+            div.addEventListener("touchend",function (e) {
+                //e.preventDefault();
+                this.style.display = 'none';
+            })
+        }
+    </script>
+</head>
+<body>
+<a href="http://www.baidu.com">百度</a>
+<div id="box">
+</div>
+</body>
+</html>

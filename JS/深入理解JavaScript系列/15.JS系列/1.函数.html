@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+    <script>
+        /*函数声明
+        函数声明（缩写为FD）是这样一种函数：
+        有一个特定的名称
+        在源码中的位置：要么处于程序级（Program level），要么处于其它函数的主体（FunctionBody）中
+        在进入上下文阶段创建
+        影响变量对象
+        以下面的方式声明*/
+     /*   function exampleFunc() {
+            ...
+        }*/
+        /*特性：函数在声明之前被调用*/
+        foo();
+        function foo() {
+            alert(1);
+        }
+        /*函数声明*/
+        // 函数可以在如下地方声明：
+        // 1) 直接在全局上下文中
+        function globalFD() {
+            // 2) 或者在一个函数的函数体内
+            function innerFD() {}
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

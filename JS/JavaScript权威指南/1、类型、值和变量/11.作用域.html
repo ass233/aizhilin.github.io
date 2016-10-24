@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域</title>
+    <script>
+/*        var authorName = "ass";
+        function doSomething() {
+            var blogName = "aaa";
+            function innerSay() {
+                alert(blogName);
+            }
+            innerSay();
+        }
+        alert(authorName);
+        alert(blogName);
+        doSomething();
+        innerSay();*/
+
+/*        var rain = 1;
+        function rainman() {
+            var man = 2;
+            function inner() {
+                var innerVar = 4;
+                alert(innerVar);
+            }
+            inner();
+        }
+        rainman();*/
+
+
+
+/*        var rain = 1;
+        function check() {
+            var rain = 100;
+            alert(rain);
+        }
+            check()
+            alert(rain);*/
+
+       /* function rainman() {
+            var i = 0;
+            if(1){
+                var j = 0;
+                for(var k = 0;k<3;k++){
+                    alert(k);
+                }
+                alert(k);
+            }
+            alert(j);
+        }*/
+
+/*       function rain() {
+           var x = 1;
+           function man() {
+               x = 100;
+           }
+            man();
+           alert(x);
+       }
+       rain();*/
+
+ /*       var x = 1;
+        function rain() {
+            alert(x);
+            var x = 'rain-man';
+            alert(x);
+        }
+        rain();*/
+
+/*        function rain() {
+            x = 100;
+        }
+        rain();
+        alert(x);*/
+
+        var x = 100;
+        alert(window.x);
+        alert(x);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

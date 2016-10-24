@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串去重</title>
+    <script>
+/*        var arr = ["a","a","c","b","c","b"];
+        var json={};
+        for(var i = 0;i<arr.length;i++){
+            if(!json[arr[i]]){
+                json[arr[i]] = 'asdafds';
+            }
+        }
+
+        var arr = [];
+        for(var name in json){
+            arr.push(name);
+        }
+        alert(arr);*/
+var arr = [1,2,3,4,4,5,6,7,6,6];
+        function a(arr,n) {
+            for(var i = 0;i<arr.length;i++){
+                if(arr[i] === n){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        var arr2= [];
+        for(var i = 0;i<arr.length;i++){
+            if(!a(arr2,arr[i])){
+                arr2.push(arr[i])
+            }
+        }
+        alert(arr2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

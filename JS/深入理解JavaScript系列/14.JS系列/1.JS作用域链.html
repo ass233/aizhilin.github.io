@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1、JS作用域链</title>
+    <script>
+        var x = 10;
+        function foo() {
+            var y = 20;
+            function bar() {
+                console.log(x + y);
+            }
+            return bar;
+        }
+        foo()();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取非行行间样式</title>
+    <style>
+        div{height: 200px;width: 100px; background: #ccc;}
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            oDiv.onclick = function () {
+                alert(oDiv.currentStyle.width);
+                //alert(oDiv.style.height);
+            }
+        };
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>

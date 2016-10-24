@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二维作用域链查找</title>
+    <script>
+        var foo = {};
+        function baz() {
+            Object.prototype.a = 'Set foo.a from prototype';
+
+            return function inner() {
+                console.log(foo.a);
+            }
+        }
+        baz()();
+        ///http://www.cnblogs.com/wilber2013/p/4909459.html
+        //http://www.cnblogs.com/wilber2013/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

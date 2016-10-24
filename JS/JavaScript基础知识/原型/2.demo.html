@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var str = 'hello';
+        String.prototype.lastValue = function () {
+            return this.charAt(this.length-2);
+        }
+        alert(str.lastValue())
+    </script>
+</head>
+<body>
+
+</body>
+</html>

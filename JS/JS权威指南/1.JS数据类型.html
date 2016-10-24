@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //JavaScript的数据类型分为：原始类型（primitive type）、对象类型（object type）
+        //JS中的原始类型：数字、字符串、布尔值
+        //JS中特殊的原始类型：null(空)、undefined(未定义)
+        //JavaScript对象是“命名值”的无序集合
+        //
+        /*
+        * JavaScript对象:
+        * 1、数组（array）,表示带编号的值的有序集合
+        * 2、函数（function）
+        * 函数初始化使用new运算符创建新对象，我们称为构造函数（constructor），每个构造函数定义一类（class）对象——由构造函数初始化的对象组成的集合*/
+        //JavaScript解释器有自己的内存管理机制，可以自动对内存进行垃圾回收
+        //当不在有任何引用指向一个对象，解释器就知道这个对象没用了，然后自动回收它所占用的内存资源
+        //JavaScript是一种面向对象的语言.不严格的讲，这意味着我们不用全局的定义函数去操作不同类型的值，数据类型本身可以定义方法（method）来使用值.例如要对数组a中的元素进行排序，不必要将a传入到sort()函数,而是调用a的一个方法sort():a.sort()
+        //JavaScript基本数据类型中只有null和undefined无法拥有方法的值
+       /*
+       * JavaScript数据类型
+       * 1、原始值和对象类型
+       * 2、拥有方法的类型和不能拥有方法的类型
+       * 3、也可以分为可以拥有方法类型和不能拥有方法的类型
+       * 4、也可以分为可变（mutable）类型和不可变(immutable)类型，可变的值是可以修改的，对象和数组属于可变的
+       * 数字、布尔值、null、undefined属于不可变类型，字符串是字符组成的数组是不可变的*/
+       //为了理解instanceof运算符是如何工作的，必须首先理解“原型链”（prototype chain）
+     /*   var a = {x:'1',y:'2'};
+        delete a.x;
+       console.log(a);*/
+
+/*     for(var i = 0;i<10;i++)
+         console.log(i);*/
+        //for(var i = 0,j = 10;i<10;i++,j--) console.log(i*j);
+        //for(var i in o)console.log(i);
+        /*var f = function (x) {
+            return x + 1;
+        }
+        function f(x) {
+            return x + 1;
+        }*/
+     /*   var a = [,1,3,5,7,8,"a","f"];
+        for (var i = 0;i<a.length;i++)
+        console.log(a);
+        console.log(a[i]);*/
+/*        var o = [,1,3,5,7,8,"a","f"]
+        for (var p in o)
+        //console.log(o[p]);
+        console.log(p)*/
+
+        var arr = [1,2,3,4,5,6];
+        var total = null;
+        for(var i = 0;i<arr.length;i++){
+             total += arr[i];
+        }
+        console.log(total)
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

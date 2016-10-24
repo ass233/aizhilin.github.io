@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+      /*  function Person() {
+
+        }
+
+        Person.prototype ={
+            constructor :Person,
+            name:"Nic",
+            age:"29",
+            sayName:function () {
+                alert(this.name)
+            }
+        }
+
+        var friend1 = new Person();
+        friend1.sayName();*/
+
+      function Person() {
+      }
+
+      Person.prototype = {
+          name:"aaa",
+          sayName:function () {
+              alert(this.name)
+          }
+      }
+
+      var friend2 = new Person();
+
+        Person.prototype  = {
+            name:"aty",
+            sayName:function () {
+                alert(this.name);
+            }
+        };//此原型未生效
+
+        friend2.sayName();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+      /*  function Person() {
+        }
+        var person = new Person();
+        Person.prototype.sayHi = function () {
+            alert("hi");
+        }
+        person.sayHi();//Hi可以访问到*/
+
+
+
+      function Person1() {
+
+      }
+      var friend = new Person1();
+
+      Person1.prototype.name = "ass";
+      Person1.prototype.sayHi = function () {
+          alert(this.name);
+      }
+
+      friend.sayHi();
+
+        Person1.prototype = {
+            constructor:Person1,
+            name:"N",
+            age:29,
+            job:"web Engineer",
+            sayName:function () {
+                alert(this.name);
+            }
+        };
+
+        friend.sayName();
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        input.active { background:yellow; }
+        .music div, .news div, .movie div { display:none; width:200px; height:200px; border:1px solid red; }
+        div.active { display:block;}
+
+        .aa { background:red; }
+        .bb { background:blue; }
+    </style>
+    <script>
+
+    </script>
+</head>
+
+<body>
+<div class="news j-tab">
+    <input type="button" value="新闻" class="active j-btn aa" />
+    <input type="button" value="体育" class="j-btn aa" />
+    <input type="button" value="天气" class="j-btn aa" />
+    <div class="active j-cont">新闻</div>
+    <div class="j-cont">体育</div>
+    <div class="j-cont">天气</div>
+</div>
+
+
+<div class="movie j-tab">
+    <input type="button" value="新闻" class="active j-btn bb" />
+    <input type="button" value="体育" class="j-btn bb" />
+    <div class="active j-cont">新闻</div>
+    <div class="j-cont">体育</div>
+</div>
+
+<div class="music j-tab">
+    <input type="button" value="新闻1" class="active j-btn" />
+    <input type="button" value="体育2" class="j-btn" />
+    <input type="button" value="新闻3" class="j-btn" />
+    <input type="button" value="体育4" class="j-btn" />
+    <div class="active j-cont">新闻1</div>
+    <div class="j-cont">体育2</div>
+    <div class="j-cont">新闻3</div>
+    <div class="j-cont">体育4</div>
+</div>
+<script>
+    var aTab=document.getElementsByClassName('j-tab');
+
+    tab(aTab[0], 'aa');
+    tab(aTab[1], 'bb');
+    tab(aTab[2], '');
+    function tab(oParent, sClassName)
+    {
+        var aBtn=oParent.getElementsByClassName('j-btn');
+        var aDiv=oParent.getElementsByClassName('j-cont');
+
+        for (var i=0; i<aBtn.length; i++)
+        {
+            aBtn[i].index=i;
+            aBtn[i].onclick=function (){
+                for (var i=0; i<aBtn.length; i++)
+                {
+                    aBtn[i].className='j-btn '+sClassName;
+                    aDiv[i].className='j-cont';
+                }
+                this.className='active j-btn '+sClassName;
+                var n=this.index;
+                aDiv[n].className='active j-cont';
+            };
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

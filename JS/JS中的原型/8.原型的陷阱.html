@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型陷阱</title>
+    <script>
+        function Dog() {
+            this.tail = true;
+        }
+        var benji = new Dog();
+        var rusty = new Dog();
+
+        /*
+        * 即便在benji和rusty对象创建之后，我们也依然能为Dog();的原型添加属性，并且在属性被添加之前就已经存在的对象
+        * 也可以随时访问这些新属性。现在，让我们放一个say()方法进去*/
+        Dog.prototype.say = function () {
+            return 'Woof';
+        };
+        /*这样，上面的两个对象都可以访问该新方法了；*/
+        console.log(benji.say());//Woof
+        console.log(rusty.say());//Woof
+        /*检查一下这些对象的构造器函数，就会发现一切正常*/
+        console.log(benji.constructor === Dog); //true
+        console.log(rusty.constructor === Dog); //true
+
+        /*现在我们用一个新对象完全覆盖掉原有的原型对象；*/
+        Dog.prototype = {
+            paws : 4,
+            hair : true
+        };
+
+        /*事实证明，这会使原有对象不能访问原型的新增属性，他们依然通过那个神秘的链接与原有的原型对象保持联系*/
+        console.log(typeof benji.paws); //undefined
+        console.log(benji.say()); //Woof
+        console.log(typeof benji.__proto__.say); //function
+        console.log(typeof benji.__proto__.paws); //undefined
+
+        /*而我们之后创建的所有对象使用的都是被更新后的prototype对象.*/
+
+        var lucy = new Dog();
+       // console.log(lucy.say());//Uncaught TypeError: lucy.say is not a function
+        console.log(lucy.paws); //4
+
+        /*并且，其秘密链接_proto_也指向了新的prototype对象;*/
+        console.log(typeof lucy.__proto__.say); //undefined
+        console.log(typeof lucy.__proto__.paws); //number
+
+        /*但这时候，新对象的constructor属性就不能保持正确了，原本原本应该是Dog();的引用只想了Object.*/
+        console.log(lucy.constructor); //function Object() { [native code] }
+        console.log(benji.constructor);/*
+         Dog() {
+             this.tail = true;
+         }
+        */
+
+        /*当然，我们可以通过重新设置constructor属性来解决上述所有的异常行为*/
+        function Dog(){}
+        Dog.prototype = {};
+        console.log(new Dog().constructor ===Dog);//false
+
+
+        Dog.prototype.constructor = Dog;
+        console.log(new Dog().constructor === Dog);//true
+
+        /*
+        * 声明：
+        * 本文借鉴JavaScript面向对象编程指南（第二版）
+        * */
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

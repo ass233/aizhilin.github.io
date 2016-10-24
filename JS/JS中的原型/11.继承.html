@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+    <script>
+        function Shape() {
+            this.name = 'Shape';
+            this.age = 28;
+            this.toString = function () {
+                return this.name;
+            };
+        }
+
+        function TwoDShape() {
+            this.name = '20 shape';
+        }
+
+        function Triangle(side ,height) {
+            this.name = 'Triangle';
+            this.side = side;
+            this.height = height;
+            this.getArea = function () {
+                return this.side * this.height/2;
+            };
+        }
+
+        TwoDShape.prototype = new Shape();
+        Triangle.prototype = new TwoDShape();
+        TwoDShape.prototype.constructor = TwoDShape;
+        Triangle.prototype.constructor = Triangle;
+        var my = new Triangle(5,10);
+        //console.log(my.age);
+        console.log(my.getArea());
+        console.log(this);
+        console.log(my.constructor === Triangle);
+        console.log(my instanceof Shape);
+        console.log(my instanceof TwoDShape);
+        console.log(my instanceof Triangle);
+        console.log(Shape.prototype.isPrototypeOf(my));
+        console.log(TwoDShape.prototype.isPrototypeOf(my));
+        console.log(Triangle.prototype.isPrototypeOf(my));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

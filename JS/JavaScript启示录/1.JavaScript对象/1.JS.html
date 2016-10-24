@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建对象</title>
+    <script>
+        var cody = new Object();//创建对象 需要new一个对象可以new后面的Object是什么？
+        cody.living = true;
+        cody.age = 33;
+        cody.gender = 'male';
+        console.log(cody);
+        /*笔录
+        * 1.对象：是属性的容器，每个属性都有一个名称和一个值，JavaScript是采用具有命名值属性的容器（即对象）；
+        * 2.方法: 在JvaScript中，方法是包含Function()对象的属性；目的就是为了对函数内部进行操作
+        * */
+        /*添加getGender方法后
+        * */
+        var cody = new Object();
+        cody.living = true;
+        cody.age = 33;
+        cody.gender = 'male';
+        cody.getGender = function () {
+            return cody.gender;
+        };
+        console.log(cody.getGender());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

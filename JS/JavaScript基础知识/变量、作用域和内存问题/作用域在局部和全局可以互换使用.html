@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域变量在局部和全局互换使用</title>
+</head>
+<body>
+<script>
+    var color = "blue";
+    function changeColor() {
+        var anotherColor = "red";
+        function swapColor() {
+            var tempColor = anotherColor;
+
+            anotherColor = color;
+            color = tempColor;
+        }
+        swapColor();
+    }
+    changeColor();
+</script>
+</body>
+</html>
