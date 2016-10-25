@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*浅拷贝*/
+    var obj={
+        a:10,
+        b:20
+    };
+
+    function copy(obj){
+        var newobj={};
+        for(arr in obj)
+        {
+            newobj[arr]=obj[arr]
+        }
+        return newobj;
+    }
+
+    obj2=copy(obj);
+    alert(obj2.a);//成功复制出obj的a
+    obj2.a=555;  //更改了obj2的a
+    alert(obj2.a);//改变
+    alert(obj.a);//不变，obj2的改变不影响obj，说明拷贝后的对象和之前的对象不存在公用一个引用
+
+    /*浅拷贝解决不了的问题需要用深拷贝*/
+    var obj={
+        a:{
+            son1:'aa',  //obj对象里的a也是个对象
+            son2:'bb'
+        },
+        b:20
+    };
+
+    function copy(obj){
+        var newobj={};
+        for(arr in obj)
+        {
+            newobj[arr]=obj[arr]
+        }
+        return newobj;
+    }
+    obj2=copy(obj);
+    alert(obj2.a.son1);//成功复制出obj的a
+    obj.a.son1=555;  //更改了obj的a.son2
+    alert(obj2.a.son1);//obj2的a.son1也随之改变
+
+
+
+    /*深拷贝*/
+
+    var obj={
+        a:{aa:10},//浅拷贝解决不了对象中的对象
+        b:11
+    };
+    function deepcopy(obj){
+
+        if(typeof obj!='object') //检验是否彻底
+        {
+            return obj;
+        }
+
+        var newobj={};
+
+        for(var attr in obj)
+        {
+            newobj[attr]=deepcopy(obj[attr]); //递归 （核心代码）
+        }
+        return newobj;
+    }
+    var obj2=deepcopy(obj);
+    alert(obj.a.aa);//10
+    alert(obj2.a.aa);//10 成功复制深层对象aa
+    obj2.a.aa=22;  //改变obj2的a的aa
+    alert(obj2.a.aa);//  改变
+    alert(obj.a.aa);//10  不变
+</script>
+</body>
+</html>
