@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function getAllPropertyNames(obj) {
+            var result = [];
+            while(obj){
+                Array.prototype.push.apply(result,Object.getOwnPropertyNames(obj));
+                obj = Object.getPrototypeOf(obj);
+            }
+            return result;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

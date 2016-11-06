@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var obj = {
+            first:'John',
+            last:'Doe'
+        };
+        for(var key in obj){
+            if (Object.prototype.hasOwnProperty.call(obj,key)){
+                console.log(key);
+            }
+        }
+
+/*        Object.key(obj).forEach(function (key) {
+            console.log(key);
+        });*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

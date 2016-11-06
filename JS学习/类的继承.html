@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类式继承</title>
+    <script>
+        function Aaa() {
+            this.name = [1,2,3];
+        }
+        Aaa.prototype.showName = function () {
+            alert(this.name);
+        }
+
+        function Bbb() {
+            Aaa.call(this)
+        }
+        var F = function () { }
+        F.prototype = Aaa.prototype;
+        Bbb.prototype = new F();
+        Bbb.prototype.constructor = Bbb;
+        var b1 = new Bbb();
+        b1.showName();
+       // alert(b1.name);
+        //alert(b1.constructor);
+        b1.name.push(4);
+        var b2 = new Bbb();
+        alert(b2.name)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
