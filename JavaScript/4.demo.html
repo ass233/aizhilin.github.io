@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>禁止复制与粘贴</title>
+</head>
+<body>
+<h2>禁止复制与粘贴</h2>
+<input type="text" name="banCopyPaste" id="banCopyPaste">
+
+<script>
+    var banCopyPaste = document.getElementById('banCopyPaste');
+    banCopyPaste.oncopy = function () {
+        return false;
+    }
+    banCopyPaste.onpaste = function () {
+        return false;
+    }
+</script>
+</body>
+</html>

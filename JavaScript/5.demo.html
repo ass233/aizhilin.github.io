@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>限制只能输入中文</title>
+</head>
+<body>
+<h2>限制只能输入中文</h2>
+<input type="text" name="number" value="只能输入中文" id="chineseStr">
+<script>
+    var chineseStr = document.getElementById('chineseStr');
+    clearNonumber = function () {
+        var _v=tThis.value;
+        tThis.value = _v.replace(正则)
+    }
+    chineseStr.onfocus = function () {
+        clearNonumber(this);
+    }
+    chineseStr.onkeyup = function () {
+        clearNonumber(this);
+    }
+    chineseStr.onblur = function () {
+        clearNonumber(this);
+    }
+
+</script>
+</body>
+</html>
