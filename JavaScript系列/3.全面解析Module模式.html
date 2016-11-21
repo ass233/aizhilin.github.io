@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全面解析Module模式</title>
+</head>
+<body>
+<div id="eq"></div>
+<script>
+/* 1   var Calculator = function (eq) {
+        var eqCtl = document.getElementById(eq);
+        return {
+            //暴露公开的成员
+            add:function (x,y) {
+                var val = x + y;
+                eqCtl.innerHTML = val;
+            }
+
+        }
+    }
+    var calculator = new Calculator('eq');
+    calculator.add(2,3);*/
+
+/*2    (function () {
+        // ... 所有的变量和function都在这里声明，并且作用域也只能在这个匿名闭包里
+        // ...但是这里的代码依然可以访问外部全局的对象
+    }());*/
+
+/*3    (function ($,YAHOO) {
+        //这里，我们的代码就可以是用全局的JQuery对象了，YAHOO也是一样
+    }(JQuery,YAHOO));*/
+
+  /*4  var blogModule = (function () {
+       var my = {},privateName = "博客园";
+        function privateAddTopic(data) {
+            //这里是内部处理代码
+        }
+
+        my.Name = privateName;
+        my.AddTopic = function (data) {
+            privateAddTopic(data);
+        }
+        return my;
+    }());*/
+
+
+/* 5   var blogModule = (function(my){
+        my.AddPhoto = function () {
+            //添加内部代码
+        };
+        return my;
+    }(blogModule));*/
+
+
+/*6、同一个大型文件的js代码进行分离按顺序加载
+    var blogModule = (function () {
+        //添加一些功能
+        return my;
+    }(blogModule));*/
+
+
+/* 7、可以进行重载
+   var blogModule = (function () {
+        var oldAddPhotoMethod = my.AddPhoto;
+        my.AddPhoto = function () {
+            //重载方法,依然通过oldAddPhotoMethod调用旧方法
+        }
+        return my;
+    }(blogModule));*/
+
+
+    var blogModule = (function () {
+        var my = {},
+        key;
+        for(key in old){
+            if (old.hasOwnProperty(key)){
+                my[key] = old[key];
+            }
+        }
+
+        var oldAddPhotoMethod = old.AddPhoto;
+        my.AddPhoto = function () {
+            //克隆以后进行了重写，当然也可以调用oldAddPhotoMethod
+        };
+    }(blogModule));
+</script>
+</body>
+</html>
