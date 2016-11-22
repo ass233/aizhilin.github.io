@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>立即调用的函数表达式</title>
+</head>
+<body>
+<a href="http://www.baidu.com">aaaaaaaaa</a>
+<a href="http://www.baidu.com">aaaaaaaaa</a>
+<script>
+/*    function makeCounter() {
+        var i = 0;
+        return function () {
+            console.log(++i);
+        }
+    }
+
+
+    var counter = makeCounter();
+    counter();
+    counter();
+
+    var counter2 = makeCounter();*/
+/*自执行函数*/
+(function () {  /*推荐使用这个*/}());
+(function () {  /*这个也是可以用的*/})();
+
+    var elems = document.getElementsByTagName('a');
+    for(var i = 0;i<elems.length;i++){
+        /*elems[i].addEventListener('click',function (e) {
+            e.preventDefault();
+            alert('I am link #' + i);
+        },'false');*/
+        (function (index) {
+            elems[i].addEventListener('click',function (e) {
+                e.preventDefault();
+                alert('I am link #' + index);
+            },'false');
+        })(i);
+    }
+
+    /*Module模式*/
+var  counter = (function () {
+   var i = 0;
+    return {
+        get:function () {
+            return i;
+        },
+        set:function (val) {
+            i = val;
+        },
+        increment:function () {
+            return ++i;
+        }
+    }
+}());
+
+    console.log(counter.get());
+    console.log(counter.set(3));
+    console.log(counter.increment());
+    console.log(counter.increment());
+
+</script>
+</body>
+</html>
